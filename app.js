@@ -14,7 +14,7 @@ $p4 = $("#desc")
 
 //Function that does weather search
 function weatherSearch(cityname){
-    const url = `${baseURL}?q=${cityname}&appid=${apiKey}`
+    const url = `${baseURL}?q=${cityname}&appid=${apiKey}&units=imperial`
     
     //Make our request
     $.ajax(url)
@@ -30,8 +30,8 @@ function weatherSearch(cityname){
 
 function render() {
     $p1.text("Weather For: " +  userInput)
-    $p2.text(`Temperature: ${weatherData.main.temp}`)
-    $p3.text(`Feels Like: ${weatherData.main.feels_like}`)
+    $p2.text(`Temperature: ${weatherData.main.temp} °`)
+    $p3.text(`Feels Like: ${weatherData.main.feels_like} °`)
     $p4.text(`Weather: ${weatherData.weather[0].description}`)
 }
 
